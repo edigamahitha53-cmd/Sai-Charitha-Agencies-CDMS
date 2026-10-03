@@ -167,7 +167,7 @@ function ResetPassword() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/shops/update-password?email=${encodeURIComponent(
+          `https://sai-charitha-agencies-cdms.onrender.com/api/shops/update-password?email=${encodeURIComponent(
             cleanEmail
           )}`,
           {

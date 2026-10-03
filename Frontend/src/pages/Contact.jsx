@@ -82,7 +82,7 @@ function Contact() {
 
 
       const response = await fetch(
-        "http://localhost:8080/api/contact/send",
+        "https://sai-charitha-agencies-cdms.onrender.com/api/contact/send",
         {
           method: "POST",
 

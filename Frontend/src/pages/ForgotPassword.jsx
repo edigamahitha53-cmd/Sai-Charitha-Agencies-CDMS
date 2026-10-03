@@ -97,7 +97,7 @@ function ForgotPassword() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/shops/check-email?email=${encodeURIComponent(
+          `https://sai-charitha-agencies-cdms.onrender.com/api/shops/check-email?email=${encodeURIComponent(
             cleanEmail
           )}`
         );

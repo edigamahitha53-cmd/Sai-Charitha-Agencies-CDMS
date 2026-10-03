@@ -83,7 +83,7 @@ function Reports() {
   ========================================= */
 
   const API_URL =
-    "http://localhost:8080/api/orders";
+    "https://sai-charitha-agencies-cdms.onrender.com/api/orders";
 
 
   /* =========================================

@@ -104,7 +104,7 @@ function ManageProducts() {
   ========================================= */
 
   const API_URL =
-    "http://localhost:8080/api/products";
+    "https://sai-charitha-agencies-cdms.onrender.com/api/products";
 
 
   /* =========================================

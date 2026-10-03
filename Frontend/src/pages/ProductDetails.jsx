@@ -91,7 +91,7 @@ function ProductDetails() {
   ========================================= */
 
   const API_URL =
-    `http://localhost:8080/api/products/${id}`;
+    `https://sai-charitha-agencies-cdms.onrender.com/api/products/${id}`;
 
 
   /* =========================================

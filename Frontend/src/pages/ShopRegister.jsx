@@ -117,7 +117,7 @@ function ShopRegister() {
 
       const response =
         await fetch(
-          "http://localhost:8080/api/shops/register",
+          "https://sai-charitha-agencies-cdms.onrender.com/api/shops/register",
           {
 
             method: "POST",
@@ -214,7 +214,7 @@ function ShopRegister() {
 
         const customerResponse =
           await fetch(
-            "http://localhost:8080/api/shop-customers/register",
+            "https://sai-charitha-agencies-cdms.onrender.com/api/shop-customers/register",
             {
 
               method: "POST",

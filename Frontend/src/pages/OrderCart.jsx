@@ -958,7 +958,7 @@ function OrderCart() {
 
         const response =
           await fetch(
-            "http://localhost:8080/api/orders",
+            "https://sai-charitha-agencies-cdms.onrender.com/api/orders",
             {
               method: "POST",
 

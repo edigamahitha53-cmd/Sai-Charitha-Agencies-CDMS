@@ -74,7 +74,7 @@ function ShopLogin() {
 
       const response =
         await fetch(
-          "http://localhost:8080/api/shops/login",
+          "https://sai-charitha-agencies-cdms.onrender.com/api/shops/login",
           {
 
             method: "POST",

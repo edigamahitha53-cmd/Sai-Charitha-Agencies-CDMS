@@ -46,13 +46,13 @@ function AdminDashboard() {
   ========================================= */
 
   const PRODUCTS_API =
-    "http://localhost:8080/api/products";
+    "https://sai-charitha-agencies-cdms.onrender.com/api/products";
 
   const ORDERS_API =
-    "http://localhost:8080/api/orders";
+    "https://sai-charitha-agencies-cdms.onrender.com/api/orders";
 
   const CUSTOMERS_API =
-    "http://localhost:8080/api/shop-customers";
+    "https://sai-charitha-agencies-cdms.onrender.com/api/shop-customers";
 
 
 

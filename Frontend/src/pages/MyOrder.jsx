@@ -315,7 +315,7 @@ function MyOrder() {
 
         const response =
           await fetch(
-            `http://localhost:8080/api/orders/shop/${shopId}`
+            `https://sai-charitha-agencies-cdms.onrender.com/api/orders/shop/${shopId}`
           );
 
 
@@ -564,7 +564,7 @@ function MyOrder() {
 
         const response =
           await fetch(
-            `http://localhost:8080/api/orders/${order.id}`,
+            `https://sai-charitha-agencies-cdms.onrender.com/api/orders/${order.id}`,
             {
               method: "PUT",
 

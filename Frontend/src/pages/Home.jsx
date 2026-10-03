@@ -122,7 +122,7 @@ function Home() {
     /* ================= PRODUCTS ================= */
 
     fetch(
-      "http://localhost:8080/api/products"
+      "https://sai-charitha-agencies-cdms.onrender.com/api/products"
     )
       .then(
         (response) => {

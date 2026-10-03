@@ -77,7 +77,7 @@ function ManageOrders() {
 
         const response =
           await fetch(
-            "http://localhost:8080/api/orders"
+            "https://sai-charitha-agencies-cdms.onrender.com/api/orders"
           );
 
 
@@ -510,7 +510,7 @@ function ManageOrders() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/orders/${existingOrder.id}`,
+          `https://sai-charitha-agencies-cdms.onrender.com/api/orders/${existingOrder.id}`,
           {
             method: "PUT",
 
@@ -622,7 +622,7 @@ function ManageOrders() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/orders/${order.id}`,
+          `https://sai-charitha-agencies-cdms.onrender.com/api/orders/${order.id}`,
           {
             method: "DELETE"
           }

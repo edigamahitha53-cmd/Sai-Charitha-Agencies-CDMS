@@ -50,7 +50,7 @@ function ManageCustomers() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8080/api/shop-customers")
+    fetch("https://sai-charitha-agencies-cdms.onrender.com/api/shop-customers")
 
       .then((response) => {
 
@@ -114,7 +114,7 @@ function ManageCustomers() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/shop-customers/${id}`,
+          `https://sai-charitha-agencies-cdms.onrender.com/api/shop-customers/${id}`,
           {
             method: "DELETE"
           }
