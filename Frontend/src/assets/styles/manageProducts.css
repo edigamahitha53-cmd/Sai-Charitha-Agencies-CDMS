@@ -1,0 +1,1574 @@
+/* =========================================================
+   MANAGE PRODUCTS PAGE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.manage-products-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 35px 45px 60px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(247, 189, 60, 0.12),
+      transparent 28%
+    ),
+    #f8f1eb;
+
+  color: #35170d;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-products-header {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.manage-products-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #42190d;
+  color: #f7bd3c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(66, 25, 13, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+
+  background: #f7bd3c;
+  color: #42190d;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.manage-products-small-title {
+  margin: 0 0 7px;
+
+  color: #b96b16;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  animation: manageSmallTitle 0.7s ease;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.manage-products-heading h1 {
+  margin: 0;
+
+  color: #42190d;
+
+  font-size: 40px;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  border-right: 3px solid #f7bd3c;
+
+  width: fit-content;
+
+  animation:
+    manageTyping 1.4s steps(20, end),
+    manageBlink 0.7s step-end infinite;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.manage-products-heading > div > p:last-child {
+  margin: 9px 0 0;
+
+  color: #765548;
+
+  font-size: 14px;
+
+  animation: manageFadeUp 0.8s ease;
+}
+
+
+/* =========================================================
+   ADD PRODUCT BUTTON
+========================================================= */
+
+.add-product-button {
+  border: none;
+
+  padding: 14px 22px;
+
+  border-radius: 14px;
+
+  background: #42190d;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px rgba(66, 25, 13, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.add-product-button svg {
+  color: #f7bd3c;
+
+  font-size: 16px;
+
+  transition: transform 0.3s ease;
+}
+
+.add-product-button:hover {
+  transform: translateY(-4px);
+
+  background: #5c2410;
+
+  box-shadow:
+    0 15px 30px rgba(66, 25, 13, 0.25);
+}
+
+.add-product-button:hover svg {
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.manage-products-toolbar {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  animation: manageFadeUp 0.8s ease;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.product-search-box {
+  width: 100%;
+  max-width: 650px;
+
+  min-height: 52px;
+
+  padding: 0 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8ca;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  box-shadow:
+    0 7px 20px rgba(66, 25, 13, 0.06);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.product-search-box:focus-within {
+  border-color: #f0b52f;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(66, 25, 13, 0.11);
+}
+
+.product-search-box > svg {
+  color: #b96b16;
+
+  font-size: 17px;
+
+  flex-shrink: 0;
+}
+
+.product-search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #42190d;
+
+  font-size: 14px;
+}
+
+.product-search-box input::placeholder {
+  color: #a9897b;
+}
+
+.product-search-box button {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f8e9dc;
+  color: #6d2c13;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.product-search-box button:hover {
+  background: #42190d;
+  color: #f7bd3c;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   PRODUCT COUNT
+========================================================= */
+
+.product-count {
+  min-height: 48px;
+
+  padding: 0 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8ca;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #765548;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow:
+    0 7px 20px rgba(66, 25, 13, 0.06);
+}
+
+.product-count svg {
+  color: #b96b16;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.products-grid {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-admin-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8ca;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 28px rgba(66, 25, 13, 0.08);
+
+  opacity: 0;
+
+  animation: productCardEnter 0.65s ease forwards;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.product-admin-card:hover {
+  transform: translateY(-9px);
+
+  border-color: #f0b52f;
+
+  box-shadow:
+    0 20px 42px rgba(66, 25, 13, 0.16);
+}
+
+
+/* =========================================================
+   CARD DECORATION
+========================================================= */
+
+.product-admin-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  right: -80px;
+  top: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(247, 189, 60, 0.13);
+
+  transition: 0.5s ease;
+
+  pointer-events: none;
+}
+
+.product-admin-card:hover::before {
+  transform: scale(1.4);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.product-image-container {
+  position: relative;
+
+  width: 100%;
+  height: 220px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7eb,
+      #f9eadc
+    );
+
+  overflow: hidden;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 20px;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.product-admin-card:hover
+.product-image-container img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   NO IMAGE
+========================================================= */
+
+.product-no-image {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #c18b6c;
+
+  font-size: 60px;
+}
+
+
+/* =========================================================
+   PACKING BADGE
+========================================================= */
+
+.packing-badge {
+  position: absolute;
+
+  left: 15px;
+  top: 15px;
+
+  padding: 8px 12px;
+
+  border-radius: 30px;
+
+  background: #42190d;
+  color: #f7bd3c;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  box-shadow:
+    0 7px 18px rgba(66, 25, 13, 0.22);
+
+  z-index: 2;
+}
+
+.packing-badge svg {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.product-card-content {
+  padding: 22px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.product-brand {
+  display: inline-block;
+
+  margin-bottom: 6px;
+
+  color: #b96b16;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.product-card-content h2 {
+  margin: 0 0 18px;
+
+  color: #42190d;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PRICE ROW
+========================================================= */
+
+.product-price-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.product-price-row > div {
+  padding: 13px;
+
+  background: #fff8ee;
+
+  border: 1px solid #f1dfce;
+
+  border-radius: 13px;
+}
+
+.product-price-row small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #967364;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+.product-price-row strong {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.mrp-price {
+  color: #765548;
+}
+
+.selling-price {
+  color: #b96b16;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS
+========================================================= */
+
+.product-details-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 8px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #ead8ca;
+  border-bottom: 1px solid #ead8ca;
+
+  margin-bottom: 17px;
+}
+
+.product-details-row > div {
+  text-align: center;
+}
+
+.product-details-row span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #967364;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.product-details-row strong {
+  display: block;
+
+  color: #42190d;
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.product-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.product-actions button {
+  min-height: 43px;
+
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.product-actions button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-product-button {
+  border: 1px solid #e8c48e;
+
+  background: #fff7e8;
+
+  color: #9b5b10;
+}
+
+.edit-product-button:hover {
+  background: #f7bd3c;
+
+  border-color: #f7bd3c;
+
+  color: #42190d;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-product-button {
+  border: 1px solid #e7c9c0;
+
+  background: #fff5f2;
+
+  color: #a63d25;
+}
+
+.delete-product-button:hover {
+  background: #42190d;
+
+  border-color: #42190d;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   NO PRODUCTS
+========================================================= */
+
+.no-products {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 30px auto;
+
+  padding: 70px 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8ca;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(66, 25, 13, 0.07);
+
+  animation: noProductsEnter 0.7s ease;
+}
+
+.no-products-icon {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 22px;
+
+  background: #fff2d4;
+
+  color: #b96b16;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  animation: emptyIconFloat 2s ease-in-out infinite;
+}
+
+.no-products h2 {
+  margin: 0 0 8px;
+
+  color: #42190d;
+
+  font-size: 25px;
+}
+
+.no-products p {
+  margin: 0 0 22px;
+
+  color: #87695b;
+
+  font-size: 14px;
+}
+
+.no-products button {
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  background: #42190d;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.no-products button:hover {
+  background: #f7bd3c;
+  color: #42190d;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.product-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 30px;
+
+  background:
+    rgba(37, 14, 7, 0.68);
+
+  backdrop-filter: blur(8px);
+
+  overflow-y: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: modalOverlayEnter 0.3s ease;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.product-modal {
+  width: 100%;
+  max-width: 680px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.3);
+
+  animation: modalEnter 0.4s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.product-modal-header {
+  padding: 22px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42190d,
+      #6d2c13
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-modal-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #f7bd3c;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.product-modal-header h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.product-modal-header > button {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.product-modal-header > button:hover {
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.product-modal form {
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #42190d;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dfcabe;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fffdfb;
+
+  color: #42190d;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #f0b52f;
+
+  box-shadow:
+    0 0 0 3px rgba(247, 189, 60, 0.14);
+
+  transform: translateY(-1px);
+}
+
+.form-group input::placeholder {
+  color: #b3988b;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   INPUT WITH RUPEE ICON
+========================================================= */
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon > svg {
+  position: absolute;
+
+  left: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #b96b16;
+
+  z-index: 2;
+}
+
+.input-with-icon input {
+  padding-left: 34px;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload-box {
+  position: relative;
+
+  width: 100%;
+  min-height: 145px;
+
+  border: 2px dashed #dfc7b6;
+
+  border-radius: 15px;
+
+  background: #fffaf5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  color: #a47761;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.image-upload-box:hover {
+  border-color: #f0b52f;
+
+  background: #fff6e9;
+
+  transform: translateY(-2px);
+}
+
+.image-upload-box > svg {
+  font-size: 30px;
+
+  color: #b96b16;
+}
+
+.image-upload-box span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.image-upload-box input[type="file"] {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.image-upload-box img {
+  width: 100%;
+  height: 145px;
+
+  object-fit: contain;
+
+  padding: 10px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.modal-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.modal-actions button {
+  min-height: 47px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.modal-actions button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.cancel-button {
+  border: 1px solid #ddc5b8;
+
+  background: #ffffff;
+
+  color: #765548;
+}
+
+.cancel-button:hover {
+  background: #f8eee7;
+
+  color: #42190d;
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.save-product-button {
+  border: 1px solid #42190d;
+
+  background: #42190d;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 18px rgba(66, 25, 13, 0.18);
+}
+
+.save-product-button svg {
+  color: #f7bd3c;
+}
+
+.save-product-button:hover {
+  background: #f7bd3c;
+
+  border-color: #f7bd3c;
+
+  color: #42190d;
+
+  box-shadow:
+    0 12px 25px rgba(185, 107, 22, 0.22);
+}
+
+.save-product-button:hover svg {
+  color: #42190d;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.product-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.product-modal::-webkit-scrollbar-track {
+  background: #f8eee7;
+}
+
+.product-modal::-webkit-scrollbar-thumb {
+  background: #c99578;
+
+  border-radius: 10px;
+}
+
+.product-modal::-webkit-scrollbar-thumb:hover {
+  background: #42190d;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes manageTyping {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes manageBlink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes manageSmallTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes manageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes productCardEnter {
+  from {
+    opacity: 0;
+    transform:
+      translateY(35px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes noProductsEnter {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emptyIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes modalOverlayEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform:
+      translateY(35px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .manage-products-page {
+    padding: 30px 30px 50px;
+  }
+
+  .products-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .manage-products-header {
+    align-items: flex-start;
+  }
+
+  .manage-products-heading h1 {
+    font-size: 34px;
+  }
+
+  .manage-products-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-search-box {
+    max-width: none;
+  }
+
+  .product-count {
+    width: fit-content;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .manage-products-page {
+    padding: 22px 18px 40px;
+  }
+
+  .manage-products-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 18px;
+  }
+
+  .manage-products-heading {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .back-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  .manage-products-heading h1 {
+    font-size: 29px;
+  }
+
+  .manage-products-small-title {
+    font-size: 11px;
+  }
+
+  .manage-products-heading > div > p:last-child {
+    font-size: 13px;
+  }
+
+  .add-product-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .product-image-container {
+    height: 210px;
+  }
+
+  .product-card-content {
+    padding: 20px;
+  }
+
+  .product-modal-overlay {
+    padding: 12px;
+  }
+
+  .product-modal {
+    max-height: 94vh;
+
+    border-radius: 20px;
+  }
+
+  .product-modal-header {
+    padding: 18px;
+  }
+
+  .product-modal form {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .manage-products-page {
+    padding: 18px 13px 35px;
+  }
+
+  .manage-products-heading h1 {
+    font-size: 26px;
+  }
+
+  .manage-products-heading {
+    gap: 9px;
+  }
+
+  .back-button {
+    width: 40px;
+    height: 40px;
+
+    font-size: 15px;
+  }
+
+  .product-price-row {
+    grid-template-columns: 1fr;
+  }
+
+  .product-details-row {
+    gap: 4px;
+  }
+
+  .product-details-row span {
+    font-size: 9px;
+  }
+
+  .product-details-row strong {
+    font-size: 13px;
+  }
+
+  .product-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+}

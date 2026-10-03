@@ -1,0 +1,1202 @@
+
+/* =========================================
+   SHOP ACCOUNT PAGE
+========================================= */
+
+.shop-account-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(247, 189, 60, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(185, 107, 22, 0.12),
+      transparent 30%
+    ),
+    #f8f1eb;
+
+  color: #35170d;
+
+  padding-bottom: 60px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND CIRCLES
+========================================= */
+
+.shop-account-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0.25;
+
+  animation:
+    accountFloat 7s ease-in-out infinite;
+}
+
+
+.circle-one {
+  width: 180px;
+
+  height: 180px;
+
+  background: #f7bd3c;
+
+  top: 100px;
+
+  left: -70px;
+}
+
+
+.circle-two {
+  width: 240px;
+
+  height: 240px;
+
+  background: #b96b16;
+
+  right: -100px;
+
+  top: 300px;
+
+  animation-delay: 1.5s;
+}
+
+
+.circle-three {
+  width: 130px;
+
+  height: 130px;
+
+  background: #642914;
+
+  bottom: 80px;
+
+  left: 20%;
+
+  animation-delay: 3s;
+}
+
+
+@keyframes accountFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      scale(1.08);
+  }
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.shop-account-header {
+  width: 92%;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 45px 0 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 25px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.shop-account-small-title {
+  margin: 0 0 8px;
+
+  color: #b96b16;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  animation:
+    accountText 0.8s ease;
+}
+
+
+.shop-account-header h1 {
+  margin: 0 0 10px;
+
+  color: #42190d;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  animation:
+    accountText 0.9s ease;
+}
+
+
+.shop-account-header p:last-child {
+  margin: 0;
+
+  color: #765548;
+
+  font-size: 15px;
+
+  animation:
+    accountText 1s ease;
+}
+
+
+@keyframes accountText {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   HEADER BUTTONS
+========================================= */
+
+.shop-account-header-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.shop-account-back-btn,
+.shop-account-logout-btn {
+  border: none;
+
+  padding: 12px 17px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  transition:
+    0.3s;
+
+  white-space: nowrap;
+}
+
+
+.shop-account-back-btn {
+  background: #42190d;
+
+  color: white;
+}
+
+
+.shop-account-back-btn:hover {
+  background: #642914;
+
+  transform:
+    translateY(-3px);
+}
+
+
+.shop-account-logout-btn {
+  background: #d32f2f;
+
+  color: white;
+}
+
+
+.shop-account-logout-btn:hover {
+  background: #b71c1c;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.shop-account-container {
+  width: 92%;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.shop-profile-card {
+  background:
+    linear-gradient(
+      135deg,
+      #42190d,
+      #6d2c13
+    );
+
+  border-radius: 20px;
+
+  padding: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(66, 25, 13, 0.25);
+
+  position: relative;
+
+  overflow: hidden;
+
+  animation:
+    profileAppear 0.7s ease;
+}
+
+
+@keyframes profileAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+.shop-profile-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+
+  height: 160px;
+
+  border-radius: 50%;
+
+  border: 25px solid
+    rgba(247, 189, 60, 0.12);
+
+  right: -50px;
+
+  top: -70px;
+}
+
+
+.shop-profile-icon {
+  width: 75px;
+
+  height: 75px;
+
+  min-width: 75px;
+
+  border-radius: 50%;
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 31px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.2);
+
+  animation:
+    iconPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes iconPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.08);
+  }
+
+}
+
+
+.shop-profile-content {
+  flex: 1;
+}
+
+
+.shop-profile-content p {
+  margin: 0 0 5px;
+
+  color: #f7bd3c;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.shop-profile-content h2 {
+  margin: 0 0 5px;
+
+  color: white;
+
+  font-size: 25px;
+}
+
+
+.shop-profile-content span {
+  color: #f3d8c8;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.shop-edit-btn {
+  border: 2px solid #f7bd3c;
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  padding: 12px 18px;
+
+  border-radius: 9px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-edit-btn:hover {
+  background: white;
+
+  border-color: white;
+
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   ACCOUNT CARD
+========================================= */
+
+.shop-account-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 27px;
+
+  margin-top: 22px;
+
+  border: 1px solid #ead8ca;
+
+  box-shadow:
+    0 8px 25px
+    rgba(71, 31, 13, 0.12);
+
+  animation:
+    cardAppear 0.6s ease;
+}
+
+
+@keyframes cardAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.shop-account-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid #f0dfd2;
+}
+
+
+.shop-account-card-icon {
+  width: 52px;
+
+  height: 52px;
+
+  min-width: 52px;
+
+  border-radius: 12px;
+
+  background: #fff3d8;
+
+  color: #b96b16;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+
+.shop-account-card-header h2 {
+  margin: 0 0 4px;
+
+  color: #42190d;
+
+  font-size: 21px;
+}
+
+
+.shop-account-card-header p {
+  margin: 0;
+
+  color: #765548;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   ACCOUNT DETAILS
+========================================= */
+
+.shop-account-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+
+.shop-account-detail {
+  background: #fffaf5;
+
+  border: 1px solid #ead8ca;
+
+  border-radius: 12px;
+
+  padding: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-account-detail:hover {
+  transform:
+    translateY(-4px);
+
+  border-color: #f0c36d;
+
+  box-shadow:
+    0 8px 18px
+    rgba(71, 31, 13, 0.1);
+}
+
+
+.shop-detail-icon {
+  width: 43px;
+
+  height: 43px;
+
+  min-width: 43px;
+
+  border-radius: 10px;
+
+  background: #f8eee5;
+
+  color: #b96b16;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+.shop-account-detail span {
+  display: block;
+
+  color: #765548;
+
+  font-size: 11px;
+
+  margin-bottom: 5px;
+}
+
+
+.shop-account-detail strong {
+  display: block;
+
+  color: #42190d;
+
+  font-size: 14px;
+
+  word-break: break-word;
+}
+
+
+.shop-address-detail {
+  grid-column:
+    1 / -1;
+}
+
+
+/* =========================================
+   EDIT FORM
+========================================= */
+
+.shop-edit-card {
+  animation:
+    editCardAppear 0.45s ease;
+}
+
+
+@keyframes editCardAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+.shop-edit-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px;
+
+  margin-top: 23px;
+}
+
+
+.shop-edit-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.shop-edit-field label {
+  color: #42190d;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.shop-edit-field label svg {
+  color: #b96b16;
+}
+
+
+.shop-edit-field input,
+.shop-edit-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dcc8b8;
+
+  background: #fffaf5;
+
+  color: #42190d;
+
+  border-radius: 9px;
+
+  padding: 12px 14px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-edit-field input:focus,
+.shop-edit-field textarea:focus {
+  border-color: #b96b16;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(185, 107, 22, 0.12);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.shop-edit-field textarea {
+  resize: vertical;
+
+  min-height: 100px;
+
+  font-family: inherit;
+}
+
+
+.shop-edit-address {
+  grid-column:
+    1 / -1;
+}
+
+
+/* =========================================
+   EDIT BUTTONS
+========================================= */
+
+.shop-edit-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 23px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid #f0dfd2;
+}
+
+
+.shop-save-btn,
+.shop-cancel-edit-btn {
+  border: none;
+
+  padding: 12px 19px;
+
+  border-radius: 8px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-save-btn {
+  background: #42190d;
+
+  color: white;
+}
+
+
+.shop-save-btn:hover {
+  background: #642914;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(66, 25, 13, 0.2);
+}
+
+
+.shop-cancel-edit-btn {
+  background: #f3e7df;
+
+  color: #765548;
+
+  border: 1px solid #d7c1b1;
+}
+
+
+.shop-cancel-edit-btn:hover {
+  background: #ead8ca;
+
+  color: #42190d;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.shop-account-actions-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 27px;
+
+  margin-top: 22px;
+
+  border: 1px solid #ead8ca;
+
+  box-shadow:
+    0 8px 25px
+    rgba(71, 31, 13, 0.12);
+
+  animation:
+    cardAppear 0.8s ease;
+}
+
+
+.shop-account-actions-card h2 {
+  margin: 0 0 5px;
+
+  color: #42190d;
+
+  font-size: 21px;
+}
+
+
+.shop-account-actions-card > p {
+  margin: 0;
+
+  color: #765548;
+
+  font-size: 13px;
+}
+
+
+.shop-account-actions {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 13px;
+
+  margin-top: 20px;
+}
+
+
+.shop-account-actions button {
+  border: 1px solid #ead8ca;
+
+  background: #fffaf5;
+
+  color: #42190d;
+
+  padding: 16px;
+
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  font-weight: 700;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-account-actions button svg {
+  color: #b96b16;
+
+  font-size: 18px;
+}
+
+
+.shop-account-actions button:hover {
+  background: #fff3d8;
+
+  border-color: #f0c36d;
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(71, 31, 13, 0.1);
+}
+
+
+/* =========================================
+   NOT LOGGED IN
+========================================= */
+
+.shop-account-empty {
+  width: 90%;
+
+  max-width: 500px;
+
+  margin:
+    100px auto;
+
+  background: white;
+
+  padding: 50px 25px;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(71, 31, 13, 0.15);
+
+  animation:
+    cardAppear 0.6s ease;
+}
+
+
+.shop-account-empty > svg {
+  font-size: 55px;
+
+  color: #b96b16;
+}
+
+
+.shop-account-empty h2 {
+  color: #42190d;
+
+  margin: 20px 0 8px;
+}
+
+
+.shop-account-empty p {
+  color: #765548;
+}
+
+
+.shop-account-empty button {
+  border: none;
+
+  background: #42190d;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    0.3s;
+}
+
+
+.shop-account-empty button:hover {
+  background: #642914;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .shop-account-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .shop-account-header-buttons {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+
+  .shop-account-details {
+    grid-template-columns: 1fr;
+  }
+
+
+  .shop-edit-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .shop-address-detail,
+  .shop-edit-address {
+    grid-column: auto;
+  }
+
+
+  .shop-account-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .shop-account-header {
+    width: 90%;
+
+    padding-top: 30px;
+  }
+
+
+  .shop-account-header h1 {
+    font-size: 30px;
+  }
+
+
+  .shop-account-container {
+    width: 90%;
+  }
+
+
+  .shop-profile-card {
+    flex-wrap: wrap;
+
+    padding: 22px;
+  }
+
+
+  .shop-profile-icon {
+    width: 60px;
+
+    height: 60px;
+
+    min-width: 60px;
+
+    font-size: 25px;
+  }
+
+
+  .shop-profile-content h2 {
+    font-size: 20px;
+  }
+
+
+  .shop-edit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .shop-account-header-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .shop-account-back-btn,
+  .shop-account-logout-btn {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+
+  .shop-account-card {
+    padding: 20px;
+  }
+
+
+  .shop-edit-buttons {
+    flex-direction: column;
+  }
+
+
+  .shop-save-btn,
+  .shop-cancel-edit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+

@@ -1,0 +1,123 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.custom-navbar {
+    background: #4E342E;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+/* Company Name */
+
+.brand-name {
+    color: #F4C542 !important;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.brand-name:hover {
+    color: #FFD54F !important;
+}
+
+/* Navigation Links */
+
+.nav-link-custom {
+    color: #ffffff !important;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+.nav-link-custom:hover {
+    color: #F4C542 !important;
+}
+
+/* Shop Login Button */
+
+.login-btn {
+    background: #F4C542 !important;
+    color: #222 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #FFD54F !important;
+    transform: translateY(-2px);
+}
+
+/* Register Button */
+
+.register-btn {
+    background: #ffffff !important;
+    color: #4E342E !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #F4C542 !important;
+    color: #222 !important;
+    transform: translateY(-2px);
+}
+
+/* Admin Login Button */
+
+.admin-btn {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #F4C542 !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    transition: 0.3s;
+}
+
+.admin-btn:hover {
+    background: #F4C542 !important;
+    color: #222 !important;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 991px) {
+
+    .custom-navbar {
+        padding: 12px 0;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .nav-link-custom {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .login-btn,
+    .register-btn,
+    .admin-btn {
+        width: 100%;
+        margin: 6px 0 !important;
+    }
+
+}

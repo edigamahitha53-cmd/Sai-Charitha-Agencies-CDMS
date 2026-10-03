@@ -1,0 +1,128 @@
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+/* Card */
+
+.dashboard-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    border-left:6px solid #F4C542;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+/* Content */
+
+.card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* Title */
+
+.card-title{
+
+    color:#777;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+    font-weight:500;
+
+}
+
+/* Number */
+
+.card-value{
+
+    color:#4E342E;
+
+    font-size:40px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* Icon Circle */
+
+.card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#F8E7A2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+.card-icon i{
+
+    font-size:30px;
+
+    color:#4E342E;
+
+}
+
+/* Hover */
+
+.dashboard-card:hover .card-icon{
+
+    background:#F4C542;
+
+    transform:rotate(10deg);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+}

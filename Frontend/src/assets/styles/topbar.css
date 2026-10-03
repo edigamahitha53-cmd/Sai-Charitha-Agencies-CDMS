@@ -1,0 +1,133 @@
+.topbar{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+}
+
+.topbar-left h2{
+
+    margin:0;
+
+    color:#4E342E;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.topbar-left p{
+
+    margin-top:5px;
+
+    color:#777;
+
+}
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.notification-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#F4C542;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.notification-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+.admin-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.profile-circle{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:#4E342E;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.admin-profile h5{
+
+    margin:0;
+
+    color:#4E342E;
+
+}
+
+.admin-profile small{
+
+    color:#777;
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+}

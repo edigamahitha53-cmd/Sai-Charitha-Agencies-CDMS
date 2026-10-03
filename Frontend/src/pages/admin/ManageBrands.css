@@ -1,0 +1,1496 @@
+/* =========================================
+   MANAGE BRANDS PAGE
+========================================= */
+
+.manage-brands-page {
+
+  min-height: 100vh;
+
+  padding: 45px 7% 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf5,
+      #f7eee6
+    );
+
+  color: #42190d;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.manage-brands-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+
+}
+
+
+.manage-brands-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+
+.brands-back-button {
+
+  width: 48px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: #42190d;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+
+}
+
+
+.brands-back-button:hover {
+
+  background: #6d2c13;
+
+  transform:
+    translateX(-5px);
+
+}
+
+
+.manage-brands-small-title {
+
+  margin: 0 0 6px;
+
+  color: #c47700;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+}
+
+
+.manage-brands-heading h1 {
+
+  margin: 0;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  color: #42190d;
+
+}
+
+
+.manage-brands-heading p:last-child {
+
+  margin: 8px 0 0;
+
+  color: #795548;
+
+  font-size: 15px;
+
+}
+
+
+/* =========================================
+   ADD BRAND BUTTON
+========================================= */
+
+.add-brand-button {
+
+  border: none;
+
+  padding: 15px 24px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7bd3c,
+      #e99b12
+    );
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(200, 130, 20, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.add-brand-button:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 16px 30px
+    rgba(200, 130, 20, 0.35);
+
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.manage-brands-toolbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 35px;
+
+}
+
+
+.brand-search-box {
+
+  width: 100%;
+
+  max-width: 620px;
+
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 18px;
+
+  background: white;
+
+  border: 1px solid #ead8cb;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(66, 25, 13, 0.08);
+
+}
+
+
+.brand-search-box > svg {
+
+  color: #b56a00;
+
+  font-size: 18px;
+
+}
+
+
+.brand-search-box input {
+
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #42190d;
+
+  font-size: 15px;
+
+}
+
+
+.brand-search-box input::placeholder {
+
+  color: #a88d7d;
+
+}
+
+
+.brand-search-box button {
+
+  border: none;
+
+  background: transparent;
+
+  color: #8b6252;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+}
+
+
+.brand-count {
+
+  min-width: 140px;
+
+  height: 55px;
+
+  padding: 0 20px;
+
+  border-radius: 17px;
+
+  background: #42190d;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px
+    rgba(66, 25, 13, 0.18);
+
+}
+
+
+.brand-count svg {
+
+  color: #f7bd3c;
+
+}
+
+
+/* =========================================
+   BRANDS GRID
+========================================= */
+
+.brands-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+
+  gap: 25px;
+
+}
+
+
+/* =========================================
+   BRAND CARD
+========================================= */
+
+.brand-admin-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: white;
+
+  border-radius: 24px;
+
+  border: 1px solid #ead8cb;
+
+  padding: 25px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(66, 25, 13, 0.08);
+
+  animation:
+    brandCardAppear
+    0.6s ease both;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+}
+
+
+.brand-admin-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+
+  height: 130px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(247, 189, 60, 0.15);
+
+  right: -55px;
+
+  top: -55px;
+
+}
+
+
+.brand-admin-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+
+  height: 80px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(109, 44, 19, 0.06);
+
+  left: -35px;
+
+  bottom: -35px;
+
+}
+
+
+.brand-admin-card:hover {
+
+  transform:
+    translateY(-9px);
+
+  box-shadow:
+    0 22px 45px
+    rgba(66, 25, 13, 0.16);
+
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.brand-card-top {
+
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+.brand-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7bd3c,
+      #e9a31a
+    );
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 10px 20px
+    rgba(229, 157, 20, 0.25);
+
+  transition: 0.35s ease;
+
+}
+
+
+.brand-admin-card:hover
+.brand-icon {
+
+  transform:
+    rotate(-8deg)
+    scale(1.08);
+
+}
+
+
+.brand-number {
+
+  color: #b98b73;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.brand-card-content {
+
+  position: relative;
+
+  z-index: 1;
+
+  padding:
+    25px 0 22px;
+
+}
+
+
+.brand-label {
+
+  color: #c47700;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+
+.brand-card-content h2 {
+
+  margin:
+    8px 0 10px;
+
+  color: #42190d;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+}
+
+
+.brand-card-content p {
+
+  min-height: 45px;
+
+  margin: 0;
+
+  color: #795548;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.brand-card-footer {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid #f0e2d9;
+
+}
+
+
+.brand-product-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #9a7665;
+
+  font-size: 12px;
+
+}
+
+
+.brand-product-info svg {
+
+  color: #b56a00;
+
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.brand-actions {
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+
+.brand-actions button {
+
+  width: 39px;
+
+  height: 39px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+
+}
+
+
+.edit-brand-button {
+
+  background: #fff4d7;
+
+  color: #9b6100;
+
+}
+
+
+.edit-brand-button:hover {
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+.delete-brand-button {
+
+  background: #fff0ed;
+
+  color: #b53d27;
+
+}
+
+
+.delete-brand-button:hover {
+
+  background: #d9534f;
+
+  color: white;
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.no-brands {
+
+  min-height: 360px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: white;
+
+  border:
+    1px dashed #d8b9a7;
+
+  border-radius: 25px;
+
+  padding: 40px 20px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(66, 25, 13, 0.06);
+
+}
+
+
+.no-brands-icon {
+
+  width: 85px;
+
+  height: 85px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #fff3d2;
+
+  color: #b56a00;
+
+  font-size: 35px;
+
+  margin-bottom: 20px;
+
+  animation:
+    floatingBrandIcon
+    2.5s ease-in-out infinite;
+
+}
+
+
+.no-brands h2 {
+
+  margin: 0 0 8px;
+
+  color: #42190d;
+
+}
+
+
+.no-brands p {
+
+  margin: 0 0 20px;
+
+  color: #86695b;
+
+}
+
+
+.no-brands button {
+
+  border: none;
+
+  border-radius: 13px;
+
+  padding: 12px 20px;
+
+  background: #42190d;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+
+.no-brands button:hover {
+
+  background: #6d2c13;
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+/* =========================================
+   INFO CARD
+========================================= */
+
+.brands-info-card {
+
+  margin-top: 35px;
+
+  padding: 25px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42190d,
+      #6d2c13
+    );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(66, 25, 13, 0.2);
+
+}
+
+
+.brands-info-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 17px;
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+}
+
+
+.brands-info-card span {
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #f7bd3c;
+
+}
+
+
+.brands-info-card h2 {
+
+  margin: 5px 0;
+
+  font-size: 22px;
+
+}
+
+
+.brands-info-card p {
+
+  margin: 0;
+
+  color: #f5ded2;
+
+  font-size: 13px;
+
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.brand-modal-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(39, 17, 9, 0.68);
+
+  backdrop-filter:
+    blur(7px);
+
+  animation:
+    modalFadeIn
+    0.25s ease;
+
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.brand-modal {
+
+  width: 100%;
+
+  max-width: 520px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fffaf5;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.3);
+
+  animation:
+    modalSlideUp
+    0.35s ease;
+
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.brand-modal-header {
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      #42190d,
+      #6d2c13
+    );
+
+  color: white;
+
+  border-radius:
+    25px 25px 0 0;
+
+}
+
+
+.brand-modal-header span {
+
+  color: #f7bd3c;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+
+.brand-modal-header h2 {
+
+  margin: 6px 0 0;
+
+  font-size: 25px;
+
+}
+
+
+.brand-modal-header button {
+
+  width: 40px;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition: 0.3s ease;
+
+}
+
+
+.brand-modal-header button:hover {
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  transform:
+    rotate(90deg);
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.brand-modal form {
+
+  padding: 28px;
+
+}
+
+
+.brand-form-group {
+
+  margin-bottom: 22px;
+
+}
+
+
+.brand-form-group label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #42190d;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+}
+
+
+.brand-input-wrapper {
+
+  height: 52px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid #dfc9bb;
+
+  border-radius: 13px;
+
+  background: white;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.brand-input-wrapper:focus-within {
+
+  border-color: #d69216;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(247, 189, 60, 0.16);
+
+}
+
+
+.brand-input-wrapper svg {
+
+  color: #b56a00;
+
+}
+
+
+.brand-input-wrapper input {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #42190d;
+
+  font-size: 14px;
+
+}
+
+
+.brand-form-group textarea {
+
+  width: 100%;
+
+  resize: vertical;
+
+  min-height: 110px;
+
+  padding: 15px;
+
+  border:
+    1px solid #dfc9bb;
+
+  border-radius: 13px;
+
+  background: white;
+
+  color: #42190d;
+
+  font-size: 14px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  box-sizing: border-box;
+
+}
+
+
+.brand-form-group textarea:focus {
+
+  border-color: #d69216;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(247, 189, 60, 0.16);
+
+}
+
+
+/* =========================================
+   MODAL ACTIONS
+========================================= */
+
+.brand-modal-actions {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 10px;
+
+}
+
+
+.brand-modal-actions button {
+
+  min-height: 48px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+
+.brand-cancel-button {
+
+  background: #eee2dc;
+
+  color: #65483b;
+
+}
+
+
+.brand-cancel-button:hover {
+
+  background: #dfd0c8;
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+.brand-save-button {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7bd3c,
+      #e89b11
+    );
+
+  color: #42190d;
+
+  box-shadow:
+    0 8px 20px
+    rgba(231, 161, 20, 0.25);
+
+}
+
+
+.brand-save-button:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(231, 161, 20, 0.35);
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes brandCardAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.96);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+@keyframes floatingBrandIcon {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-9px);
+
+  }
+
+}
+
+
+@keyframes modalFadeIn {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes modalSlideUp {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.95);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .manage-brands-page {
+
+    padding:
+      30px 5% 50px;
+
+  }
+
+
+  .manage-brands-header {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+
+  .add-brand-button {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+
+  .manage-brands-toolbar {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+
+  .brand-search-box {
+
+    max-width: none;
+
+  }
+
+
+  .brand-count {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .manage-brands-heading {
+
+    align-items: flex-start;
+
+  }
+
+
+  .manage-brands-heading h1 {
+
+    font-size: 30px;
+
+  }
+
+
+  .brands-back-button {
+
+    width: 42px;
+
+    height: 42px;
+
+  }
+
+
+  .brands-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .brands-info-card {
+
+    align-items: flex-start;
+
+  }
+
+
+  .brand-modal-overlay {
+
+    padding: 12px;
+
+  }
+
+
+  .brand-modal form {
+
+    padding: 20px;
+
+  }
+
+
+  .brand-modal-actions {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}

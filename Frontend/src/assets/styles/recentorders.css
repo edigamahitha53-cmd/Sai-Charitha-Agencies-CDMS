@@ -1,0 +1,55 @@
+.recent-orders{
+
+    margin-top:30px;
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.recent-orders h3{
+
+    color:#4E342E;
+
+    margin-bottom:20px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#4E342E;
+
+    color:#ffffff;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+tr:hover{
+
+    background:#F8F5F0;
+
+}

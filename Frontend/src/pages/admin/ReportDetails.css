@@ -1,0 +1,1358 @@
+/* =========================================
+   REPORT DETAILS PAGE
+========================================= */
+
+.report-details-page {
+
+  min-height: 100vh;
+
+  padding: 35px 45px 70px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 194, 67, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf2,
+      #fff3df
+    );
+
+  color: #42190d;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.report-details-header {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 35px;
+
+}
+
+
+.report-details-back {
+
+  border: none;
+
+  background: #42190d;
+
+  color: white;
+
+  padding: 13px 20px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 22px rgba(66, 25, 13, 0.18);
+
+  transition: 0.3s ease;
+
+}
+
+
+.report-details-back:hover {
+
+  transform: translateX(-5px);
+
+  background: #6d2c13;
+
+}
+
+
+.report-details-heading {
+
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+
+.report-details-icon {
+
+  width: 65px;
+
+  height: 65px;
+
+  border-radius: 20px;
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(247, 189, 60, 0.28);
+
+  animation:
+    reportIconFloat 3s ease-in-out infinite;
+
+}
+
+
+.report-details-heading p {
+
+  margin: 0 0 5px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  color: #a75b13;
+
+}
+
+
+.report-details-heading h1 {
+
+  margin: 0;
+
+  font-size: 38px;
+
+  color: #42190d;
+
+}
+
+
+.report-details-heading > div > span {
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: #80685d;
+
+}
+
+
+/* =========================================
+   TYPING ANIMATION
+========================================= */
+
+.report-details-typing {
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-right: 3px solid #f7bd3c;
+
+  animation:
+    typingReport 1.5s steps(30, end),
+    blinkReport 0.7s step-end infinite;
+
+}
+
+
+@keyframes typingReport {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+
+}
+
+
+@keyframes blinkReport {
+
+  50% {
+    border-color: transparent;
+  }
+
+}
+
+
+@keyframes reportIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.report-details-container {
+
+  max-width: 1250px;
+
+  margin: auto;
+
+}
+
+
+/* =========================================
+   MAIN SUMMARY
+========================================= */
+
+.report-main-summary {
+
+  background:
+    linear-gradient(
+      135deg,
+      #42190d,
+      #6d2c13
+    );
+
+  color: white;
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  box-shadow:
+    0 18px 45px rgba(66, 25, 13, 0.22);
+
+  animation:
+    summaryAppear 0.7s ease both;
+
+}
+
+
+.report-summary-main-icon {
+
+  width: 80px;
+
+  height: 80px;
+
+  border-radius: 24px;
+
+  background: #f7bd3c;
+
+  color: #42190d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 34px;
+
+}
+
+
+.report-main-summary span {
+
+  font-size: 13px;
+
+  opacity: 0.75;
+
+}
+
+
+.report-main-summary h2 {
+
+  margin: 5px 0;
+
+  font-size: 42px;
+
+}
+
+
+.report-main-summary p {
+
+  margin: 0;
+
+  opacity: 0.75;
+
+}
+
+
+/* =========================================
+   MINI CARDS
+========================================= */
+
+.report-mini-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin: 25px 0 40px;
+
+}
+
+
+.report-mini-card {
+
+  background: rgba(255,255,255,0.88);
+
+  border: 1px solid #efd9bd;
+
+  border-radius: 20px;
+
+  padding: 22px;
+
+  display: grid;
+
+  grid-template-columns: 48px 1fr;
+
+  column-gap: 13px;
+
+  box-shadow:
+    0 10px 30px rgba(93, 47, 21, 0.08);
+
+  transition: 0.35s ease;
+
+  animation:
+    cardAppear 0.6s ease both;
+
+}
+
+
+.report-mini-card:nth-child(2) {
+
+  animation-delay: 0.08s;
+
+}
+
+
+.report-mini-card:nth-child(3) {
+
+  animation-delay: 0.16s;
+
+}
+
+
+.report-mini-card:nth-child(4) {
+
+  animation-delay: 0.24s;
+
+}
+
+
+.report-mini-card:hover {
+
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+  box-shadow:
+    0 18px 38px rgba(93, 47, 21, 0.14);
+
+}
+
+
+.report-mini-card > div {
+
+  grid-row: span 3;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 15px;
+
+  background: #fff0ca;
+
+  color: #b46a08;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.report-mini-card span {
+
+  color: #846d60;
+
+  font-size: 12px;
+
+}
+
+
+.report-mini-card strong {
+
+  color: #42190d;
+
+  font-size: 21px;
+
+}
+
+
+/* =========================================
+   RELATED ORDERS
+========================================= */
+
+.related-orders-section {
+
+  margin-top: 30px;
+
+}
+
+
+.related-orders-heading {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+}
+
+
+.related-orders-heading > div:first-child span {
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  font-weight: 800;
+
+  color: #b06b16;
+
+}
+
+
+.related-orders-heading h2 {
+
+  margin: 8px 0 0;
+
+  font-size: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.related-orders-count {
+
+  background: #42190d;
+
+  color: white;
+
+  padding: 10px 17px;
+
+  border-radius: 30px;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   ORDER LIST
+========================================= */
+
+.report-orders-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+}
+
+
+.report-order-card {
+
+  background: rgba(255,255,255,0.94);
+
+  border: 1px solid #ecd8c1;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(74, 39, 18, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  animation:
+    orderAppear 0.65s ease both;
+
+}
+
+
+.report-order-card:hover {
+
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 45px rgba(74, 39, 18, 0.14);
+
+}
+
+
+/* =========================================
+   ORDER TOP
+========================================= */
+
+.report-order-top {
+
+  padding: 23px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #f1e2d1;
+
+}
+
+
+.report-order-top span {
+
+  display: block;
+
+  color: #a06e4c;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  font-weight: 800;
+
+}
+
+
+.report-order-top h3 {
+
+  margin: 5px 0 0;
+
+  color: #42190d;
+
+  font-size: 20px;
+
+}
+
+
+.report-order-status {
+
+  padding: 9px 15px;
+
+  border-radius: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  background: #fff2cf;
+
+  color: #a96709;
+
+}
+
+
+.report-order-status.confirmed {
+
+  background: #e4f7e9;
+
+  color: #24804a;
+
+}
+
+
+.report-order-status.processing {
+
+  background: #e7efff;
+
+  color: #416db1;
+
+}
+
+
+.report-order-status.shipped {
+
+  background: #eee5ff;
+
+  color: #7548b7;
+
+}
+
+
+.report-order-status.delivered {
+
+  background: #dcf7e7;
+
+  color: #1f8a4c;
+
+}
+
+
+.report-order-status.order-cancelled {
+
+  background: #ffe4e1;
+
+  color: #c83c32;
+
+}
+
+
+/* =========================================
+   ORDER INFO
+========================================= */
+
+.report-order-info {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  padding: 20px 25px;
+
+  gap: 15px;
+
+}
+
+
+.report-order-info > div {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+.report-order-info svg {
+
+  color: #c47a14;
+
+}
+
+
+.report-order-info span {
+
+  color: #8b766a;
+
+  font-size: 12px;
+
+}
+
+
+.report-order-info strong {
+
+  color: #42190d;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   CUSTOMER
+========================================= */
+
+.report-customer {
+
+  margin: 0 25px 20px;
+
+  padding: 18px;
+
+  border-radius: 17px;
+
+  background: #fff9ef;
+
+  display: grid;
+
+  grid-template-columns:
+    55px 1.5fr 1fr 1fr;
+
+  gap: 15px;
+
+  align-items: center;
+
+}
+
+
+.report-customer-icon {
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 14px;
+
+  background: #f7bd3c;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #42190d;
+
+}
+
+
+.report-customer > div:not(.report-customer-icon) {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+
+.report-customer span {
+
+  color: #927b6e;
+
+  font-size: 11px;
+
+}
+
+
+.report-customer strong {
+
+  color: #42190d;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+.report-products {
+
+  margin: 0 25px 20px;
+
+  border-top: 1px solid #f1e2d1;
+
+  padding-top: 18px;
+
+}
+
+
+.report-products h4 {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0 0 12px;
+
+  color: #42190d;
+
+}
+
+
+.report-product-row {
+
+  display: grid;
+
+  grid-template-columns:
+    2fr 1fr 1fr;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 13px;
+
+  border-radius: 14px;
+
+  background: #fffaf4;
+
+  margin-bottom: 8px;
+
+}
+
+
+.report-product-name {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+.report-product-name img,
+.report-product-placeholder {
+
+  width: 50px;
+
+  height: 50px;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  background: white;
+
+}
+
+
+.report-product-placeholder {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #b56d13;
+
+}
+
+
+.report-product-name div:last-child {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+
+.report-product-name strong {
+
+  color: #42190d;
+
+}
+
+
+.report-product-name span {
+
+  color: #8b766a;
+
+  font-size: 12px;
+
+}
+
+
+.report-product-row > div:not(.report-product-name) {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+}
+
+
+.report-product-row span {
+
+  color: #8b766a;
+
+  font-size: 11px;
+
+}
+
+
+.report-product-row strong {
+
+  color: #42190d;
+
+}
+
+
+/* =========================================
+   DELIVERY
+========================================= */
+
+.report-delivery {
+
+  margin: 0 25px 20px;
+
+  padding: 18px;
+
+  border-radius: 17px;
+
+  background: #f5f8ff;
+
+  display: flex;
+
+  gap: 15px;
+
+  align-items: flex-start;
+
+}
+
+
+.report-delivery-icon {
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 14px;
+
+  background: #dce8ff;
+
+  color: #4269ae;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.report-delivery span {
+
+  display: block;
+
+  color: #6e7d9b;
+
+  font-size: 11px;
+
+  margin-bottom: 4px;
+
+}
+
+
+.report-delivery strong {
+
+  color: #293b62;
+
+}
+
+
+.report-delivery p {
+
+  margin: 5px 0 0;
+
+  color: #6e7d9b;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.report-order-footer {
+
+  padding: 16px 25px;
+
+  border-top: 1px solid #f1e2d1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+}
+
+
+.report-order-footer button {
+
+  border: none;
+
+  background: #42190d;
+
+  color: white;
+
+  padding: 11px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+
+}
+
+
+.report-order-footer button:hover {
+
+  background: #f0aa20;
+
+  color: #42190d;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.no-report-orders {
+
+  background: white;
+
+  border: 1px solid #ecd8c1;
+
+  border-radius: 25px;
+
+  padding: 70px 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 35px rgba(74, 39, 18, 0.08);
+
+}
+
+
+.no-report-icon {
+
+  width: 80px;
+
+  height: 80px;
+
+  border-radius: 25px;
+
+  margin: auto;
+
+  background: #fff0ca;
+
+  color: #b46a08;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 32px;
+
+}
+
+
+.no-report-orders h3 {
+
+  margin: 20px 0 8px;
+
+  font-size: 24px;
+
+}
+
+
+.no-report-orders p {
+
+  color: #8b766a;
+
+}
+
+
+.no-report-orders button {
+
+  margin-top: 15px;
+
+  border: none;
+
+  background: #42190d;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 13px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes summaryAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes cardAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.97);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+@keyframes orderAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .report-details-page {
+
+    padding: 25px 20px 50px;
+
+  }
+
+
+  .report-mini-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .report-order-info {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .report-customer {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .report-details-page {
+
+    padding: 20px 14px 40px;
+
+  }
+
+
+  .report-details-header {
+
+    flex-direction: column;
+
+  }
+
+
+  .report-details-heading h1 {
+
+    font-size: 28px;
+
+  }
+
+
+  .report-main-summary {
+
+    padding: 25px;
+
+  }
+
+
+  .report-main-summary h2 {
+
+    font-size: 30px;
+
+  }
+
+
+  .report-mini-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .related-orders-heading {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+  }
+
+
+  .report-order-top {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+  }
+
+
+  .report-customer {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .report-product-row {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
